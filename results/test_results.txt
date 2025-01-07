@@ -1,0 +1,27 @@
+(ds) Diya@MacBook-Pro ds3500 % python -m pytest -v --cov=your_module --cov-report=term-missing /Users/Diya/Downloads/ds3500/hw5/test_assignta.py
+============================================================================= test session starts ==============================================================================
+platform darwin -- Python 3.12.4, pytest-8.3.3, pluggy-1.5.0 -- /opt/anaconda3/envs/ds/bin/python
+cachedir: .pytest_cache
+rootdir: /Users/Diya/Downloads/ds3500
+plugins: cov-5.0.0
+collected 5 items                                                                                                                                                              
+
+hw5/test_assignta.py::test_overallocation PASSED                                                                                                                         [ 20%]
+hw5/test_assignta.py::test_conflicts PASSED                                                                                                                              [ 40%]
+hw5/test_assignta.py::test_undersupport PASSED                                                                                                                           [ 60%]
+hw5/test_assignta.py::test_unwilling PASSED                                                                                                                              [ 80%]
+hw5/test_assignta.py::test_unpreferred PASSED                                                                                                                            [100%]/opt/anaconda3/envs/ds/lib/python3.12/site-packages/coverage/inorout.py:505: CoverageWarning: Module your_module was never imported. (module-not-imported)
+  self.warn(f"Module {pkg} was never imported.", slug="module-not-imported")
+/opt/anaconda3/envs/ds/lib/python3.12/site-packages/coverage/control.py:892: CoverageWarning: No data was collected. (no-data-collected)
+  self._warn("No data was collected.", slug="no-data-collected")
+WARNING: Failed to generate report: No data to report.
+
+/opt/anaconda3/envs/ds/lib/python3.12/site-packages/pytest_cov/plugin.py:352: CovReportWarning: Failed to generate report: No data to report.
+
+  warnings.warn(CovReportWarning(message), stacklevel=1)
+
+
+---------- coverage: platform darwin, python 3.12.4-final-0 ----------
+
+
+============================================================================== 5 passed in 0.56s ===============================================================================

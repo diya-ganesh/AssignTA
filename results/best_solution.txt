@@ -1,0 +1,97 @@
+Objective function scores:
+overallocation: 0
+conflicts: 0
+undersupport: 0
+unwilling: 0
+unpreferred: 2
+
+Sections for each TA:
+TA1: Sections [9]
+TA2: Sections []
+TA3: Sections [9]
+TA4: Sections [15]
+TA5: Sections [8]
+TA6: Sections []
+TA7: Sections [16]
+TA8: Sections [4, 16]
+TA9: Sections [13]
+TA10: Sections [12]
+TA11: Sections [7, 11]
+TA12: Sections [15]
+TA13: Sections []
+TA14: Sections [8, 17]
+TA15: Sections []
+TA16: Sections [12]
+TA17: Sections [1]
+TA18: Sections []
+TA19: Sections [2, 10]
+TA20: Sections [13]
+TA21: Sections [5]
+TA22: Sections [6]
+TA23: Sections [5, 10]
+TA24: Sections [17]
+TA25: Sections [12, 16]
+TA26: Sections [14]
+TA27: Sections [2, 10]
+TA28: Sections [6]
+TA29: Sections [14]
+TA30: Sections [6]
+TA31: Sections [17]
+TA32: Sections [3]
+TA33: Sections [3]
+TA34: Sections [7]
+TA35: Sections [11]
+TA36: Sections [9]
+TA37: Sections []
+TA38: Sections [2]
+TA39: Sections [1]
+TA40: Sections [4, 5]
+TA41: Sections [1]
+TA42: Sections []
+TA43: Sections []
+
+TAs for each section:
+Section 1: TA [17, 39, 41]
+Section 2: TA [19, 27, 38]
+Section 3: TA [32, 33]
+Section 4: TA [8, 40]
+Section 5: TA [21, 23, 40]
+Section 6: TA [22, 28, 30]
+Section 7: TA [11, 34]
+Section 8: TA [5, 14]
+Section 9: TA [1, 3, 36]
+Section 10: TA [19, 23, 27]
+Section 11: TA [11, 35]
+Section 12: TA [10, 16, 25]
+Section 13: TA [9, 20]
+Section 14: TA [26, 29]
+Section 15: TA [4, 12]
+Section 16: TA [7, 8, 25]
+Section 17: TA [14, 24, 31]
+
+Justification:
+
+Within the Evo class, I implemented a get_best_solution method that identifies the best solution by iterating through
+the scores of all non-dominated solutions and calculating a weighted average. Initially, I ensured that only
+non-dominated solutions with zero conflicts were considered. This was my highest priority because, while morale and
+scheduling are important, it is physically impossible for a TA to be in two lab sections simultaneously.
+
+Next, I developed the weighted average. I assigned the greatest weight, 50%, to minimizing the "unwilling" penalty
+because if a TA is unwilling to assist with a section, it is likely due to other commitments, which again would lead
+to scheduling conflicts. The second-highest weight, 35%, was assigned to minimizing "undersupport." This objective
+returns a penalty score across all sections, and its impact can vary significantly. For instance, an undersupport
+penalty of 6 might mean six sections are short one TA each—a manageable situation—or that two sections are each
+missing three TAs, which is far more critical.
+
+I gave "overallocation" a weight of 14%. While ensuring TAs are not too overallocated is important, a small amount of
+overallocation can be acceptable if the TAs are willing, as willingness is already addressed by the higher weight on
+minimizing unwilling penalties. Finally, I assigned a weight of 1% to the "unpreferred" objective. Although less
+critical than the others, it still plays a role. If all other factors are equal, we would prefer a solution with a
+lower unpreferred penalty. However, it is not a major concern if a TA is in a section they are willing to teach,
+even if it is not their first choice.
+
+After calculating weighted averages for each non-dominated solution, the method returns the solution with the lowest
+average. The solution selected here is optimal, with no penalties for overallocation, conflicts, undersupport, or
+unwillingness, and only a small penalty score of 2 for the unpreferred objective. This means there are two instances
+where a TA is assigned to a section they are willing to teach but did not rank as their top preference. Overall, this
+result seems highly satisfactory.

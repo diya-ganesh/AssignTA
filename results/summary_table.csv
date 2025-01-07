@@ -1,0 +1,7 @@
+groupname,overallocation,conflicts,undersupport,unwilling,unpreferred
+AssignTA,0,0,0,2,0
+AssignTA,0,0,1,1,0
+AssignTA,0,0,2,0,0
+AssignTA,0,0,0,1,1
+AssignTA,0,0,0,0,2
+AssignTA,0,0,1,0,1
