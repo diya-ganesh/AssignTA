@@ -224,14 +224,14 @@ def main():
     # initialize evo using test 1 as the initial case
     # I used all three tests as potential initial cases, and they returned the same nds's and best solution
     # Thus, I felt it unnecessary to create a new initial case
-    initial_solution = np.loadtxt("/Users/Diya/Downloads/ds3500/hw5/test1.csv", delimiter=",")
+    initial_solution = np.loadtxt("tests/test1.csv", delimiter=",")
     evo = initialize_evo(initial_solution)
 
     # run the Evo instance to evolve solutions
     run_evolve(evo, 299.99)
 
     # create summary table of all non-denominated solutions
-    create_summary_table('/Users/Diya/Downloads/ds3500/hw5/summary_table.csv', evo)
+    create_summary_table('results/summary_table.csv', evo)
 
     # show best solution
     best_solution = evo.get_best_solution()
@@ -240,10 +240,10 @@ def main():
     print(f"Solution matrix:\n{evo.pop[best_solution[0]]}")
 
     # add the best solution to txt file
-    create_best_solution_txt("/Users/Diya/Downloads/ds3500/hw5/best_solution.txt", evo)
+    create_best_solution_txt("results/best_solution.txt", evo)
 
 if __name__ == '__main__':
     main()
     # return runtimes
-    with open("/Users/Diya/Downloads/ds3500/hw5/profiling_report.txt", "w") as file:
+    with open("results/profiling_report.txt", "w") as file:
         file.write(profiler.Profiler.report())
