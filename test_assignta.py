@@ -9,9 +9,9 @@ import numpy as np
 import assignta
 
 # Load the test data and convert to numpy arrays
-test_data1 = np.loadtxt("/Users/Diya/Downloads/ds3500/hw5/test1.csv", delimiter=",")
-test_data2 = np.loadtxt("/Users/Diya/Downloads/ds3500/hw5/test2.csv", delimiter=",")
-test_data3 = np.loadtxt("/Users/Diya/Downloads/ds3500/hw5/test3.csv", delimiter=",")
+test_data1 = np.loadtxt("tests/test1.csv", delimiter=",")
+test_data2 = np.loadtxt("tests/test2.csv", delimiter=",")
+test_data3 = np.loadtxt("tests/test3.csv", delimiter=",")
 
 # Expected evaluation scores
 eval_scores = np.array([
