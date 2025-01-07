@@ -13,8 +13,8 @@ import csv
 from evo import Evo
 import profiler
 
-tas_df = pd.read_csv("/Users/Diya/Downloads/ds3500/hw5/tas.csv")
-sections_df = pd.read_csv("/Users/Diya/Downloads/ds3500/hw5/sections.csv")
+tas_df = pd.read_csv("tas.csv")
+sections_df = pd.read_csv("sections.csv")
 
 # OBJECTIVE FUNCTIONS
 def overallocation(solution):
