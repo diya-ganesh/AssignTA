@@ -67,7 +67,7 @@ This solution aims to minimize penalties for:
 
 - **`assignta.py`**: Main script for running the algorithm.
 - **`evo.py`**: Framework for evolutionary computation.
-- **test_assignta.py**: Unit tests that ensure the correctness of the algorithm's objectives.
+- **`test_assignta.py`**: Unit tests that ensure the correctness of the algorithm's objectives.
 
 ## Contributors
 
